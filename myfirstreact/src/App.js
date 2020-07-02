@@ -55,16 +55,14 @@ class App extends Component {
           </div>
         </div>
 
-        <button type="button" className="btn btn-primary">Primary</button>
-
+        <section>
+          <ContactForm />
+        </section>
 
         <section>
           <Table characterData={characters} removeCharacter={this.removeCharacter} />
         </section>
 
-        <section>
-          <ContactForm />
-        </section>
 
       </div>
     );
