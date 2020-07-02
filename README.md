@@ -37,3 +37,15 @@ https://www.taniarascia.com/getting-started-with-react/
       <div id="Root"> Hello world </div>
    ...
   ```
+
+#### 1/7/20
+
+1. Understanding of state and prop (still slightly unclear on how props work)
+
+2. Create forms and handleChange function. Handle change will setState with the input values user create on forms.
+
+3. Attempted assignment 1 on forms for contact detail page allowing user to input first name, last name, age(dropdown), country (dropdown), postalcode and email.
+
+Data inputted is saved to state array. 
+
+form is created under `contactForm.js`
