@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Table from './table';
 
 class App extends Component { 
   render(){
@@ -14,6 +15,12 @@ class App extends Component {
         </div>
 
         <button type="button" className="btn btn-primary">Primary</button>
+
+
+        <section>
+          <Table />
+        </section>
+
       </div>
     );
   }
