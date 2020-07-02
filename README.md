@@ -36,9 +36,8 @@ https://www.taniarascia.com/getting-started-with-react/
    ...
       <div id="Root"> Hello world </div>
    ...
-  ```
 
-#### 1/7/20
+#### 2/7/20
 
 1. Understanding of state and prop (still slightly unclear on how props work)
 
