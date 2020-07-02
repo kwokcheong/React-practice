@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import Table from './table';
 
+//This is a Class Component
+
 class App extends Component { 
   render(){
     return (
       <div className="App">
-        <h1>Learning React</h1>
-
+        
         <div className="jumbotron jumbotron-fluid" >
           <div className="container">
             <h1 className="display-4">Contact form</h1>
-            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <p className="lead">Want to know more information or have a particular question for us? Drop us a contact!</p>
           </div>
         </div>
 
