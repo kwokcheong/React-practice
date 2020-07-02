@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Table from './table';
-
+import ContactForm from './contactForm';
 
 
 
@@ -60,6 +60,10 @@ class App extends Component {
 
         <section>
           <Table characterData={characters} removeCharacter={this.removeCharacter} />
+        </section>
+
+        <section>
+          <ContactForm />
         </section>
 
       </div>
