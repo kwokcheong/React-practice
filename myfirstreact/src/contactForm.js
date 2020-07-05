@@ -15,6 +15,7 @@ export default class ContactForm extends React.Component{
         super(props); //tell the parent constructor about the props
         this.handleChange=this.handleChange.bind(this);
         this.confirm = this.confirm.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     handleChange(event){
@@ -23,7 +24,21 @@ export default class ContactForm extends React.Component{
         })
     }
 
-    confirm(){
+    reset(event){
+        event.preventDefault();
+        this.setState({
+            firstname: '',
+            lastname: '',
+            age: null,
+            email: '',
+            country: 'Singapore',
+            postalcode: 0,
+            haveSubmitted: false
+        })
+    }
+
+    confirm(event){
+        event.preventDefault();
         this.setState({
             haveSubmitted: true
         })
@@ -83,10 +98,10 @@ export default class ContactForm extends React.Component{
                 </div>
                 <div> 
                     <label>Postal Code: </label>
-                    <input type="number" name='postalcode' maxLength="8" onChange={this.handleChange} value={this.state.postalcode}/>
+                    <input type="number" name='postalcode' max="99999999" onChange={this.handleChange} value={this.state.postalcode}/>
                 </div>
-
-                <button onClick={this.confirm}>Submit</button>
+                <button class="btn btn-primary m-2" onClick={this.reset}>Reset</button>
+                <button class="btn btn-primary m-2" onClick={this.confirm}>Submit</button>
 
                 {this.displaySummary()}
             </form>

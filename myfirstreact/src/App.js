@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Table from './table';
-import ContactForm from './contactForm';
+import ContactForm from './ContactForm';
 
 
 
