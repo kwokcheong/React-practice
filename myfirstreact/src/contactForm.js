@@ -4,7 +4,7 @@ export default class ContactForm extends React.Component{
     state = {
         firstname: '',
         lastname: '',
-        age: null,
+        age: 18,
         email: '',
         country: 'Singapore',
         postalcode: null,
@@ -29,7 +29,7 @@ export default class ContactForm extends React.Component{
         this.setState({
             firstname: '',
             lastname: '',
-            age: null,
+            age: 18,
             email: '',
             country: 'Singapore',
             postalcode: 0,
