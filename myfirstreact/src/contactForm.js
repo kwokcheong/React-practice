@@ -62,17 +62,19 @@ export default class ContactForm extends React.Component{
 
     render(){
         return(
+            
             <form>
+                <h5>Contact Form:</h5>
                 <div> 
-                    <label>First Name: </label>
+                    <label style={{margin: "10px"}}>First Name: </label>
                     <input type='text' name='firstname' maxLength="25" onChange={this.handleChange} value={this.state.firstname}/>
                 </div>
                 <div> 
-                    <label>Last Name: </label>
+                    <label style={{margin: "10px"}}>Last Name: </label>
                     <input type='text' name='lastname' maxLength="25" onChange={this.handleChange} value={this.state.lastname}/>
                 </div>
                 <div>
-                    <label>Age: </label>
+                    <label style={{margin: "10px", marginRight:"55px"}}>Age: </label>
                     <select name="age" onChange={this.handleChange} value={this.state.age}>
                         <option value="18">18</option>
                         <option value="19">19</option>
@@ -85,11 +87,11 @@ export default class ContactForm extends React.Component{
                     </select>
                 </div>
                 <div> 
-                    <label>Email:</label>
+                    <label style={{margin: "10px", marginRight:"45px"}}>Email:</label>
                     <input type="text" name='email' maxLength="25" onChange={this.handleChange} value={this.state.email}/>
                 </div>
                 <div>
-                    <label>Country: </label>
+                    <label style={{margin: "10px", marginRight:"26px"}}>Country: </label>
                     <select name="country" onChange={this.handleChange} value={this.state.country}>
                         <option value="Singapore">Singapore</option>
                         <option value="Malaysia">Malaysia</option>
@@ -97,13 +99,20 @@ export default class ContactForm extends React.Component{
                     </select>
                 </div>
                 <div> 
-                    <label>Postal Code: </label>
+                    <label style={{margin: "10px"}}>Postal Code: </label>
                     <input type="number" name='postalcode' max="99999999" onChange={this.handleChange} value={this.state.postalcode}/>
                 </div>
                 <button class="btn btn-primary m-2" onClick={this.reset}>Reset</button>
                 <button class="btn btn-primary m-2" onClick={this.confirm}>Submit</button>
+                
+                { 
+               this.state.haveSubmitted === true ?  // if has image
+               <p>{this.displaySummary()} </p>      // return My image tag 
+               :
+               <p></p>       // otherwise return other element  
 
-                {this.displaySummary()}
+             }
+                
             </form>
         )
     }
