@@ -1,4 +1,6 @@
 import React from 'react';
+import TextBox from './components/TextBox.js';
+import SelectBox from './components/SelectBox';
 
 export default class ContactForm extends React.Component{
     state = {
@@ -65,45 +67,29 @@ export default class ContactForm extends React.Component{
             
             <form>
                 <h5>Contact Form:</h5>
-                <div> 
-                    <label style={{margin: "10px"}}>First Name: </label>
-                    <input type='text' name='firstname' maxLength="25" onChange={this.handleChange} value={this.state.firstname}/>
-                </div>
-                <div> 
-                    <label style={{margin: "10px"}}>Last Name: </label>
-                    <input type='text' name='lastname' maxLength="25" onChange={this.handleChange} value={this.state.lastname}/>
-                </div>
-                <div>
-                    <label style={{margin: "10px", marginRight:"55px"}}>Age: </label>
-                    <select name="age" onChange={this.handleChange} value={this.state.age}>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                    </select>
-                </div>
-                <div> 
-                    <label style={{margin: "10px", marginRight:"45px"}}>Email:</label>
-                    <input type="text" name='email' maxLength="25" onChange={this.handleChange} value={this.state.email}/>
-                </div>
-                <div>
-                    <label style={{margin: "10px", marginRight:"26px"}}>Country: </label>
-                    <select name="country" onChange={this.handleChange} value={this.state.country}>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Thailand">Thailand</option>
-                    </select>
-                </div>
-                <div> 
-                    <label style={{margin: "10px"}}>Postal Code: </label>
-                    <input type="number" name='postalcode' max="99999999" onChange={this.handleChange} value={this.state.postalcode}/>
-                </div>
-                <button class="btn btn-primary m-2" onClick={this.reset}>Reset</button>
-                <button class="btn btn-primary m-2" onClick={this.confirm}>Submit</button>
+                    <TextBox type='text' title="First Name: " name='firstname' maxLength="25" passedfunction={this.handleChange} value={this.state.firstname}/>
+                    <TextBox type='text' title="Last Name: " name='lastname' maxLength="25" passedfunction={this.handleChange} value={this.state.lastname}/>
+                    <SelectBox name="age" title="Age: " passedfunction={this.handleChange} value={this.state.age} 
+                        option={[
+                        { value: '18', label: '18' },
+                        { value: '19', label: '19' },
+                        { value: '20', label: '20' },
+                        { value: '21', label: '21' },
+                        { value: '22', label: '22' },
+                        { value: '23', label: '23' },
+                        { value: '24', label: '24' },
+                        { value: '25', label: '25' },
+                    ]}/>
+                    <TextBox type='email' title="Email: " name='email' maxLength="25" passedfunction={this.handleChange} value={this.state.email}/>
+                    <SelectBox name="country" title="Country: " passedfunction={this.handleChange} value={this.state.country} 
+                        option={[
+                        { value: 'Singapore', label: 'Singapore' },
+                        { value: 'Malaysia', label: 'Malaysia' },
+                        { value: 'Thailand', label: 'Thailand' },
+                    ]}/>
+                <TextBox type="number" title="Postal Code: " name="postalcode" max="99999999" passedfunction={this.handleChange} value={this.state.postalcode}/>
+                <button className="btn btn-primary m-2" onClick={this.reset}>Reset</button>
+                <button className="btn btn-primary m-2" onClick={this.confirm}>Submit</button>
                 
                 { 
                this.state.haveSubmitted === true ?  // if has image
