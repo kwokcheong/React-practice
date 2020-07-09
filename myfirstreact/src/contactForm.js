@@ -2,10 +2,11 @@ import React from 'react';
 import TextBox from './components/TextBox.js';
 import SelectBox from './components/SelectBox';
 import UpdatedComponent from './components/withContactForm';
+import ButtonBox from './components/ButtonBox';
 
 class ContactForm extends React.Component{
     render(){
-        const {handleChange, reset, confirm, displaySummary, state} = this.props
+        const {handleChange, reset, confirm, state} = this.props;
         return(
             <form>
                 <h5>Contact Form:</h5>
@@ -30,12 +31,20 @@ class ContactForm extends React.Component{
                         { value: 'Thailand', label: 'Thailand' },
                     ]}/>
                 <TextBox type="number" title="Postal Code: " name="postalcode" max="99999999" passedfunction={handleChange} value={state.postalcode}/>
-                <button className="btn btn-primary m-2" onClick={reset}>Reset</button>
-                <button className="btn btn-primary m-2" onClick={confirm}>Submit</button>
-                
+                <ButtonBox click={reset} title="Reset"/>
+                <ButtonBox click={confirm} title="Submit"/>
+
                 { 
                 state.haveSubmitted === true ?  // if has data
-               <p>{displaySummary()} </p>      // return My data
+                <div> 
+                <ul>
+                    <li>Name:{state.lastname} {state.firstname}</li>
+                    <li>Age:{state.age}</li>
+                    <li>Email: {state.email}</li>
+                    <li>Country: {state.country}</li>
+                    <li>Postal Code: {state.postalcode}</li>
+                </ul>
+            </div>     // return My data
                :
                <p></p>       // otherwise return other element  
              }

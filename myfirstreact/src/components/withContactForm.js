@@ -46,20 +46,7 @@ const UpdatedComponent = (OriginalComponent) =>{
             })
         }
     
-        displaySummary(){
-    
-            return(
-                <div> 
-                    <ul>
-                        <li>Name:{this.state.lastname} {this.state.firstname}</li>
-                        <li>Age:{this.state.age}</li>
-                        <li>Email: {this.state.email}</li>
-                        <li>Country: {this.state.country}</li>
-                        <li>Postal Code: {this.state.postalcode}</li>
-                    </ul>
-                </div>
-            )
-        }
+
 
         render(){
             return <OriginalComponent 
